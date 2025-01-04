@@ -1,4 +1,4 @@
-//rich text editor
+//rich text editor or real time editor
 import React from 'react'
 import {Editor} from "@tinymce/tinymce-react"
 import {Controller} from "react-hook-form"

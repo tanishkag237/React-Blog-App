@@ -42,23 +42,27 @@ function Header() {
             <Logo width='70px' />
             </Link>
           </div>
+
           <ul className='flex ml-auto'>
-            {navItems.map((item)=>(
-              item.active ? (
-                <li key={item.name}>
-                  <button onClick={()=>navigate(item.slug)} 
-                  className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
-                  >{item.text}</button>
-                </li>
-              ):null
-            ))}
+            {navItems.map((item) => 
+            item.active ? (
+              <li key={item.name}>
+                <button
+                onClick={() => navigate(item.slug)}
+                className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                >{item.name}</button>
+              </li>
+            ) : null
+            )}
             {authStatus && (
               <li>
                 <Logoutbtn />
               </li>
-            )}  
+              
+            )}
             {/* if authStatus is true then whatever in brackets is shown.. show logout button if user is logged in */}
           </ul>
+          
         </nav>
       </Container>
     </header>

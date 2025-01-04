@@ -37,7 +37,7 @@ export class Service{
             }
         }
 
-        async updatePost(slug,{title,content,featuredImage,status,userid}){ //slug is document id tbhi alag se likha hai not as object
+        async updatePost(slug,{title,content,featuredImage,status}){ //slug is document id tbhi alag se likha hai not as object
             try {
                 return await this.databases.updateDocument(
                     config.appwriteDatabaseID,
