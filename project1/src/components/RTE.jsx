@@ -5,6 +5,7 @@ import {Controller} from "react-hook-form"
 
 //control -> pass on control to whatever component is using/ calling this RTE
 export default function RTE({name,control, label, defaultValue=""}) {
+  const tinyMCEkey ="agqvq93x1rn794oo7lw1ask0snv4esyyy25z6qm3aqth5tjy"
   return (
     <div className='w-full'>
         {label && <label className='inline-block mb-1 pl-1'>{label}</label>}
@@ -15,6 +16,7 @@ export default function RTE({name,control, label, defaultValue=""}) {
         render={({field:{onChange}})=>(
 
             <Editor
+            apiKey={tinyMCEkey}
             initialValue={defaultValue}
             init={{
                 initialValue: defaultValue,
