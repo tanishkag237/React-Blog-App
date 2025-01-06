@@ -17,10 +17,13 @@ function Postform({post}) {
         },
     });
 
+    //appwrite provides access via $ sign
+
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
     const submit = async (data) => {
+        console.log(data);
         if (post) {
             const file = data.image[0] ? await service.uploadFile(data.image[0]) : null;
 
@@ -42,6 +45,8 @@ function Postform({post}) {
             if (file) {
                 const fileId = file.$id;
                 data.featuredImage = fileId;
+                console.log(userData);
+                console.log(userData.$id);
                 const dbPost = await service.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
