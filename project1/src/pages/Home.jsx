@@ -6,8 +6,9 @@ function Home() {
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        service.getPost().then((posts) => {
+        service.getAllPosts().then((posts) => {
             if (posts) {
+                console.log("Fetched posts:", posts)
                 setPosts(posts.documents)
             }
         })

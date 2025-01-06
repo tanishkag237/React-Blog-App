@@ -87,7 +87,9 @@ export class Service{
         //for all/list post that are active(status)
         async getAllPosts(queries=[Query.equal("status", "active")]){
             try {
+                console.log("Fetching all posts"); // Debug log
                 return await this.databases.listDocuments(
+                    
                     config.appwriteDatabaseID,
                     config.appwriteCollectionID,
                     //[Query.equal("status", "active")]  -> this can be written here too
